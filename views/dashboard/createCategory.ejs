@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Sản phẩm mới</title>
+</head>
+<body>
+    <div class="main">
+        <div class="nav-bar">
+            <h2>Dashboard</h2>
+
+
+            <ul>
+                <li>
+                    <span>Xin chào </span><span style="font-size: 20px;font-weight: bold;"> <%= account.username%>!</h3>
+                </li>
+                <li>
+                    <a href="#">Thông tin cá nhân</a>
+                </li>
+                <li>
+                    <a href="/dashboard/create-product">Đăng bài viết mới</a>
+                </li>
+                <li>
+                    <a href="/dashboard/product-management">Quản lý sản phẩm</a>
+                </li>
+                <li>
+                    <a href="/dashboard/create-category">Tạo thương hiệu mới</a>
+                </li>
+                <li>
+                    <a href="#">Quản lý website</a>
+                </li>
+                <li>
+                    <a href="#">Quản lý cộng tác viên</a>
+                </li>
+                <li>
+                    <a href="#">Thông tin thanh toán</a>
+                </li>
+                <li>
+                    <a href="/user/logout">Đăng xuất</a>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+
+            <div class="block-heading">Tạo chuyên mục mới</div>
+            <form class="new-product" method="POST">
+                <h3>Tên nhãn hiệu</h3>
+                <input type="text" name="title" value="" placeholder="Tên thương hiệu" />
+                <h3>Đường dẫn (tùy chỉnh)</h3>
+                <input type="text" name="url" value="" placeholder="ten-thuong-hieu" />
+                <h3>Mô tả</h3>
+                <textarea name="desc" id="" class="desc" rows="10"></textarea>
+                <h3>Từ khóa</h3>
+                <input type="text" name="keyword" value="" placeholder="mua iphone gia re, ect..." /> <br>
+                <%if(data.error) {%>
+                    <span class="dataerror"><%= data.error%></span>
+                <%}%>
+                <%if(data.success) {%>
+                    <span class="datasuccess"><%= data.success%></span>
+                <%}%>
+                <button class="btn post" type="submit">Tạo mới</button>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

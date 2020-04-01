@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Thông tin sản phẩm</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav-bar">
+            <h2>Dashboard</h2>
+
+
+            <ul>
+                <li>
+                    <span>Xin chào </span><span style="font-size: 20px;font-weight: bold;"> <%= account.username%>!</h3>
+                </li>
+                <li>
+                    <a href="#">Thông tin cá nhân</a>
+                </li>
+                <li>
+                    <a href="/dashboard/create-product">Đăng bài viết mới</a>
+                </li>
+                <li>
+                    <a href="/dashboard/product-management">Quản lý sản phẩm</a>
+                </li>
+                <li>
+                    <a href="/dashboard/create-category">Tạo thương hiệu mới</a>
+                </li>
+                <li>
+                    <a href="#">Quản lý website</a>
+                </li>
+                <li>
+                    <a href="#">Quản lý cộng tác viên</a>
+                </li>
+                <li>
+                    <a href="#">Thông tin thanh toán</a>
+                </li>
+                <li>
+                    <a href="/user/logout">Đăng xuất</a>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+
+            <div class="block-heading">Thông tin sản phẩm</div>
+            <div class="manage-list-product">
+                <%if(data && data.listProduct){%>
+                    <%for(let product of data.listProduct){%>
+                <div class="manage-product">
+                    <img class="thumb" src="/<%= product.thumb%>" alt="">
+                    <div class="title"><%= product.name%></div>
+                    <span class="price"><%= product.price%>₫</span> <span
+                        class="price-real"><%= product.promotion%>₫</span>
+                    <div class="promotion">Tặng kèm iPhone XS Max khi mua từ 10 chiếc trở lên.</div>
+                    <div class="function">
+                        <button class="btn btn-view"><a href="/product/<%= product.url%>">Xem</a></button>
+                        <button class="btn btn-edit"><a href="/dashboard/product-management/edit/<%= product._id%>">Sửa</a></button>
+                        <button class="btn btn-delete post_delete" id="<%= product._id%>">Xóa</button>
+                    </div>
+                </div>
+                    <%}%>
+                <%}%>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/post.js"></script>
+</body>
+
+</html>

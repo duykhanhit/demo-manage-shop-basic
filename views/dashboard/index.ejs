@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="main">
+        <div class="nav-bar">
+            <h2>Dashboard</h2>
+
+            <ul>
+                <li>
+                    <span>Xin chào </span><span style="font-size: 20px;font-weight: bold;"> <%= account.username%>!</h3>
+                </li>
+                <li>
+                    <a href="#">Thông tin cá nhân</a>
+                </li>
+                <li>
+                    <a href="/dashboard/create-product">Đăng bài viết mới</a>
+                </li>
+                <li>
+                    <a href="/dashboard/product-management">Quản lý sản phẩm</a>
+                </li>
+                <li>
+                    <a href="/dashboard/create-category">Tạo thương hiệu mới</a>
+                </li>
+                <li>
+                    <a href="#">Quản lý website</a>
+                </li>
+                <li>
+                    <a href="#">Quản lý cộng tác viên</a>
+                </li>
+                <li>
+                    <a href="#">Thông tin thanh toán</a>
+                </li>
+                <li>
+                    <a href="/user/logout">Đăng xuất</a>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+
+            <div class="block-heading">Thống kê</div>
+
+            <div class="manage">
+                
+                <div class="total-product">
+                    <h2>Tổng</h2>
+                    9999<sub>sản phẩm</sub>
+                </div>
+                <div class="wait-product">
+                    <h2>Đang giao</h2>
+                    10000<sub>sản phẩm</sub>
+                </div>
+                <div class="success-product">
+                    <h2>Đã giao</h2>
+                    9999<sub>sản phẩm</sub>
+                </div>
+            </div>
+
+            <div class="block-heading">Thông tin khác</div>
+            <div class="admin-main">
+                <div class="admin-left">
+                    <h3>Phiên bản này có gì hot?</h3>
+                    <ul>
+                        <li>Web shop phiên bản 1.0</li>
+                        <li>Đăng sản phẩm theo thể loại</li>
+                        <li>URL thân thiện</li>
+                        <li>Thống kê sản phẩm chi tiết</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+                <div class="admin-right">
+                    <h3>Thiết kế và phát triển bởi <span class="dev">DuyKhanhIT</span></h3>
+                    <h3>Chi tiết vui lòng liên hệ hotline: 123123</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

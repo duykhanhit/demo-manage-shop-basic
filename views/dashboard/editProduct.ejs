@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Sản phẩm mới</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav-bar">
+            <h2>Dashboard</h2>
+
+
+            <ul>
+                <li>
+                    <span>Xin chào </span><span style="font-size: 20px;font-weight: bold;"> <%= account.username%>!</h3>
+                </li>
+                <li>
+                    <a href="#">Thông tin cá nhân</a>
+                </li>
+                <li>
+                    <a href="/dashboard/create-product">Đăng bài viết mới</a>
+                </li>
+                <li>
+                    <a href="/dashboard/product-management">Quản lý sản phẩm</a>
+                </li>
+                <li>
+                    <a href="/dashboard/create-category">Tạo thương hiệu mới</a>
+                </li>
+                <li>
+                    <a href="#">Quản lý website</a>
+                </li>
+                <li>
+                    <a href="#">Quản lý cộng tác viên</a>
+                </li>
+                <li>
+                    <a href="#">Thông tin thanh toán</a>
+                </li>
+                <li>
+                    <a href="/user/logout">Đăng xuất</a>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+
+            <div class="block-heading">chỉnh sửa sản phẩm</div>
+            <%if(data.product){%>
+            <form class="new-product" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<%= data.product._id%>" />
+                <h3>Tên sản phẩm</h3>
+                <input type="text" name="title" value="<%= data.product.name%>" placeholder="Tên sản phẩm" />
+                <h3>Đường dẫn (tùy chỉnh)</h3>
+                <input type="text" name="url"" value=" <%= data.product.url%>" placeholder="link-san-pham" />
+                <h3>Từ khóa</h3>
+                <input type="text" name="keyword" value="<%= data.product.keyword%>"
+                    placeholder="giam gia 100%, flash sales ect..." />
+                <h3>Mô tả</h3>
+                <textarea name="desc" id="" class="desc" rows="10"><%= data.product.descriptions%></textarea>
+                <h3>Số lượng trong kho</h3>
+                <input type="number" name="total" value="<%= data.product.total%>" placeholder="999" />
+                <h3>Giá bán (VND)</h3>
+                <input type="number" name="price" value="<%= data.product.price%>" placeholder="100000 VND" />
+                <h3>Khuyến mãi?</h3>
+                <input type="number" name="promotion" value="<%= data.product.promotion%>" placeholder="100%" />
+                <h3>Thể loại</h3>
+                <%if(data.listName){%>
+                <select class="option" name="category" id="">
+                    <%for(let item of data.listName){%>
+                        <option value="<%= item.name%>"><%= item.name%></option>
+                    <%}%>
+                </select>
+                <%}%>
+                <h3>Ảnh đại diện</h3>
+                <input type="file" name="thumb" value="<%= data.product.thumb%>" /> <br>
+                <button class="btn post post_edit" type="button">Sửa</button>
+            </form>
+            <%}%>
+
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/post.js"></script>
+</body>
+</html>
